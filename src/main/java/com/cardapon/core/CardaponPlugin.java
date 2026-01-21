@@ -1,7 +1,6 @@
 package com.cardapon.core;
 
-import com.cardapon.commands.ExampleCommand;
-import com.cardapon.commands.SpawnCommand;
+import com.cardapon.commands.SummonCommand;
 import com.cardapon.registry.MoveRegistry;
 import com.cardapon.registry.SpeciesRegistry;
 import com.hypixel.hytale.logger.HytaleLogger;
@@ -14,7 +13,6 @@ public class CardaponPlugin extends JavaPlugin {
 
     public CardaponPlugin(JavaPluginInit init) {
         super(init);
-        // Correct Hytale syntax: atInfo().log(...)
         LOGGER.atInfo().log("Cardapon System v%s is starting...", this.getManifest().getVersion().toString());
     }
 
@@ -28,7 +26,8 @@ public class CardaponPlugin extends JavaPlugin {
         SpeciesRegistry.init();
 
         // --- 2. REGISTER COMMANDS ---
-        this.getCommandRegistry().registerCommand(new SpawnCommand("Cardapon", this.getManifest().getVersion().toString()));
+        // FIX: Use the no-args constructor to match SpawnCommand.java
+        this.getCommandRegistry().registerCommand(new SummonCommand());
 
         LOGGER.atInfo().log("Cardapon System loaded successfully.");
     }
