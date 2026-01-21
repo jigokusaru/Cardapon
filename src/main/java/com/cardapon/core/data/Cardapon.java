@@ -29,7 +29,7 @@ public class Cardapon {
     private int currentHp;
     private int currentEnergy;
 
-    // --- CONSTRUCTOR (This fixes the "Required Types" error) ---
+    // --- CONSTRUCTOR ---
     public Cardapon(String speciesId, int level) {
         // 1. Look up the Species Blueprint
         this.species = SpeciesRegistry.get(speciesId);
@@ -81,10 +81,14 @@ public class Cardapon {
         if (this.currentHp < 0) this.currentHp = 0;
     }
 
-    // --- GETTERS (This fixes the "getLevel/getNickname not found" error) ---
+    // --- GETTERS ---
 
     public String getNickname() {
         return (nickname != null && !nickname.isEmpty()) ? nickname : species.getName();
+    }
+
+    public String getSpeciesId() {
+        return speciesId;
     }
 
     public int getLevel() { return level; }

@@ -13,15 +13,15 @@ public class SpeciesRegistry {
     public static void init() {
 
         // --- 000: DUMBY (The Test Subject) ---
-        // Should never spawn naturally. Used for error handling and testing.
+        // Updated to use the working Kweebec model so you can test it immediately.
         register(new Species(
                 "species_000",
                 "Dummy",
                 Types.VOID,
                 Types.NONE,
-                new StatBlock(100, 100, 100, 100, 100, 100, 100), // Flat 100s
+                new StatBlock(100, 100, 100, 100, 100, 100, 100),
                 "A test entity. If you see this, something went wrong.",
-                "models/cardapons/dummy.obj" // Placeholder model
+                "Kweebec_Sapling" // <--- CHANGED FROM PLACEHOLDER TO REAL MODEL
         ));
 
         // Insert your real creature here when ready.
